@@ -1,0 +1,19 @@
+- name: cronjob ansible aufgabe01
+  hosts: all
+  gather facts: yes
+  become: yes
+  tasks:
+   - name: "cronjob update"
+     ansible.builtin.cron:
+      name: "update every hour"
+      state: present
+      special_time: hourly
+      job: 
+      # Hier wusste ich leider nicht, was ich eintragen soll. 
+      # Soll ich eine Datei eingtragen, die das Update ausführt?
+      # Oder kann ich hier auch eine Task festlegen?
+      # In allen Beispielen, die ich Online gefunden habe, 
+      # existiert diese Cronjob File bereits. Soll ich diese erstllen?
+      # Es scheint mir auch möglichkeiten zu geben, 
+      # die direkt den Cronjob ausführen.
+      
